@@ -17,9 +17,6 @@ namespace CommandsService.Data
             if (command == null)
                 throw new ArgumentNullException(nameof(command));
 
-            if (!PlatformExists(platformId))
-                throw new ArgumentException("The platform id that was passed is invalid!");
-
             command.PlatformId = platformId;
             _context.Commands.Add(command);
         }
